@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.nobrains.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\no\\Nobrains\\actions.json",
+      "action_manifest_path": "D:\\Nobrain\\Nobrain\\Nobrains\\actions.json",
       "strings": {
         "en_us": {
           "name": "Nobrains [Testing]"
