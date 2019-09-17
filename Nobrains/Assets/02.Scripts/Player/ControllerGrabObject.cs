@@ -7,11 +7,12 @@ using Valve.VR;
 
 public class ControllerGrabObject : MonoBehaviour
 {
+
     public SteamVR_Input_Sources hand;  //왼, 오른손 모두
     public SteamVR_Behaviour_Pose pose; //컨트롤러 정보
     public SteamVR_Action_Boolean teleportAction; // 그랩액션 정보
 
-
+    private SteamVR_TrackedObject trackedObj;
     private GameObject collidingObject; //
     private GameObject objectInHand; //
 
@@ -40,36 +41,36 @@ public class ControllerGrabObject : MonoBehaviour
         }
     }
 
-    public void  OnTriggerEnter(Collider other) 
+    public void OnTriggerEnter(Collider other)
     {
-        
-        SetCollidingObject(other); 
-          
+
+        SetCollidingObject(other);
+
     }
 
-    public void OnTriggerStay(Collider other) 
+    public void OnTriggerStay(Collider other)
     {
-        SetCollidingObject(other);    
+        SetCollidingObject(other);
     }
 
-    public void OnTriggerExit(Collider other) 
+    public void OnTriggerExit(Collider other)
     {
-    if (! collidingObject) 
-    {
-        return;
-    }
-    collidingObject = null;
-    }
-
-    private void SetCollidingObject(Collider col)
-    {
-        Debug.Log("@@@@@@@@@@@");
-        if (collidingObject || col.GetComponent<Rigidbody>())
+        if (!collidingObject)
         {
             return;
         }
-        collidingObject = col.gameObject;
-        Debug.Log(collidingObject +"coliding object");
+        collidingObject = null;
+    }
+
+    private void SetCollidingObject(Collider other)
+    {
+        Debug.Log("@@@@@@@@@@@");
+        if (collidingObject || ! other.GetComponent<Rigidbody>())
+        {
+            return;
+        }
+        collidingObject = other.gameObject;
+        Debug.Log(collidingObject + "coliding object");
     }
 
     private void GrabObject()
@@ -79,7 +80,7 @@ public class ControllerGrabObject : MonoBehaviour
 
         var joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
-       Debug.Log("fIXED JOINT");
+        Debug.Log("fIXED JOINT");
 
 
     }
@@ -100,8 +101,8 @@ public class ControllerGrabObject : MonoBehaviour
             GetComponent<FixedJoint>().connectedBody = null;
             Destroy(GetComponent<FixedJoint>());
 
-            objectInHand.GetComponent<Rigidbody>().velocity = pose.GetVelocity();
-            objectInHand.GetComponent<Rigidbody>().angularVelocity = pose.GetAngularVelocity();
+           // objectInHand.GetComponent<Rigidbody>().velocity = pose.GetVelocity();
+           // objectInHand.GetComponent<Rigidbody>().angularVelocity = pose.GetAngularVelocity();
 
         }
         objectInHand = null;
