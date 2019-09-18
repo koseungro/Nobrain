@@ -74,7 +74,7 @@ public class HandController : MonoBehaviour
     }
     public bool GetTrigger()
     {
-        return trigger.GetStateDown(handType);
+        return trigger.GetState(handType);
 
     }
 }
