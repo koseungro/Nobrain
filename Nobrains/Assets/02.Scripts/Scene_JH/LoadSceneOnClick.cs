@@ -7,11 +7,11 @@ public class LoadSceneOnClick : MonoBehaviour, IPointerClickHandler
 {
     public void LoadByIndex(int sceneIndex)
     {
-    SceneManager.LoadScene (sceneIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+
     }
 }
