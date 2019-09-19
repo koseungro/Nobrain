@@ -141,4 +141,13 @@ public class LaserPointer : MonoBehaviour
             uiClick = false;
         }
     }
+    void ButtonClick() {
+        if(Physics.Raycast(ray, out hit, range, 1<<5)) {
+            Debug.Log("Button!");
+            if(trigger.GetStateDown(hand)) {
+                // OnLaserClick();
+            ExecuteEvents.Execute(hit.collider.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
+            }
+        }
+    }
 }
