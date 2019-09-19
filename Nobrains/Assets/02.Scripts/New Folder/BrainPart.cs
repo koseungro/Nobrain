@@ -34,7 +34,7 @@ public class BrainPart : MonoBehaviour
 
     }
     // Start is called before the first frame update
-    void LaserEnter(GameObject cBrain)
+    void LaserEnter(GameObject cBrain) //cBrain 씨브레인 ㅆㅂ
     {
         if (gameObject == cBrain)
         {

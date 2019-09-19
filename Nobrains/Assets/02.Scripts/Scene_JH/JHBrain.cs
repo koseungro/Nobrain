@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR;
 using UnityEngine.EventSystems;
 
-public class GoBrain : MonoBehaviour
+public class JHBrain : MonoBehaviour
 {
     private Transform tr;
     private Animator anim;
