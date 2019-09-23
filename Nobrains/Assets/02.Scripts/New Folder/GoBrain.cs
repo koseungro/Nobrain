@@ -16,6 +16,7 @@ public class GoBrain : MonoBehaviour
     private SteamVR_Action_Boolean grab = SteamVR_Actions.default_GrabGrip;
     private SteamVR_Action_Boolean teleport = SteamVR_Actions.default_Teleport;
     private SteamVR_Action_Vibration haptic = SteamVR_Actions.default_Haptic;
+    private SteamVR_Action_Boolean bomb = SteamVR_Actions.default_TouchpadTouch;
 
     public float rotSpeed = 15f;
     private bool rotate = true;
@@ -31,7 +32,7 @@ public class GoBrain : MonoBehaviour
 
     void Update()
     {
-        RotateBrain();
+        RotateBrain();        
 
         if (grab.GetStateDown(hand))
         {
@@ -79,5 +80,5 @@ public class GoBrain : MonoBehaviour
         }
 
     }    
-
+    
 }

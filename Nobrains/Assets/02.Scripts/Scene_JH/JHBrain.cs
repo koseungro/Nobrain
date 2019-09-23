@@ -10,6 +10,7 @@ public class JHBrain : MonoBehaviour
     private Animator anim;
     private int hashOpen;
     private bool opening = false;
+    public GameObject bomb;
 
     public SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any;
 
@@ -25,13 +26,15 @@ public class JHBrain : MonoBehaviour
         tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
         hashOpen = Animator.StringToHash("BrainOpen");
+        
 
     }
 
 
     void Update()
     {
-        RotateBrain();
+        // RotateBrain();
+        BombBrain();
 
         if (grab.GetStateDown(hand))
         {
@@ -76,6 +79,12 @@ public class JHBrain : MonoBehaviour
                 tr.Rotate(Vector3.up, Time.deltaTime * rotSpeed);
                 rotate = true;
             }
+        }
+    }
+    void BombBrain() {
+        if(teleport.GetStateDown(hand)) {
+           bomb.SetActive(true);
+           Debug.Log("BBBBBBOMB");
         }
     }
 

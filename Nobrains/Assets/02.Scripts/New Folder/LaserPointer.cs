@@ -50,8 +50,7 @@ public class LaserPointer : MonoBehaviour
     void Update()
     {
         Pointer();
-        BrainPart();
-        // ButtonClick();
+        BrainPart();        
 
         if (trigger.GetStateDown(hand))
         {
@@ -81,7 +80,7 @@ public class LaserPointer : MonoBehaviour
         if (Physics.Raycast(ray, out hit, range))
         {
             line.SetPosition(1, new Vector3(0, 0, hit.distance)); //라인이 오브젝트에 닿으면 그 hit을 끝점으로
-            if (hit.collider.gameObject.layer == 8) //만약 라인이 뇌에 닿으면 포인터 생성
+            if (hit.collider.gameObject.layer == 8 || hit.collider.gameObject.layer == 5) //만약 라인이 뇌에 닿으면 포인터 생성
             {
                 pointer.transform.gameObject.SetActive(true);
                 pointer.transform.position = hit.point;
@@ -135,29 +134,19 @@ public class LaserPointer : MonoBehaviour
             hit.collider.gameObject.transform.Find("Canvas").gameObject.SetActive(true);
             uiClick = true;
         }
-        else
+        else if(uiClick && Physics.Raycast(ray, out hit, range, brainLayer))
         {
             hit.collider.gameObject.transform.Find("Canvas").gameObject.SetActive(false);
             uiClick = false;
         }
-        // if (Physics.Raycast(ray, out hit, range, 1 << 5))
-        // {
-        //     Debug.Log("Button!");
-        //     if (trigger.GetStateDown(hand))
-        //     {
-        //         ExecuteEvents.Execute(hit.collider.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
-        //     }
-        // }
+        if (Physics.Raycast(ray, out hit, range, 1 << 5))
+        {
+            Debug.Log("Button!");
+            if (trigger.GetStateDown(hand))
+            {
+                ExecuteEvents.Execute(hit.collider.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
+            }
+        }
     }
-    // void ButtonClick()
-    // {
-    //     if (Physics.Raycast(ray, out hit, range, 1 << 5))
-    //     {
-    //         Debug.Log("Button!");
-    //         if (trigger.GetStateDown(hand))
-    //         {
-    //             ExecuteEvents.Execute(hit.collider.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
-    //         }
-    //     }
-    // }
+    
 }
