@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/01.Scenes/Seungro.unity
     guid: 799538ebe8a611548804b20c1d7369ce
   - enabled: 1
+    path: Assets/01.Scenes/AnimationScene.unity
+    guid: 686cabe341602f349a36447edc8db337
+  - enabled: 1
     path: Assets/01.Scenes/JH.unity
     guid: 941f72bb1f83dd74fbbcaedb8d344843
   m_configObjects: {}

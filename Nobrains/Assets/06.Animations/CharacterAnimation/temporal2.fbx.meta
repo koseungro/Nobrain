@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 43810d6785b539e44b8edf38853d9e48
+guid: 5b56c1158dc138a48a7d90d8caa293c1
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Zombie Kicking
+      name: Focus
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 105
+      lastFrame: 165
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
