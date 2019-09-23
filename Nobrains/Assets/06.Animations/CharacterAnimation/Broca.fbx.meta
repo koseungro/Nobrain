@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5100192391145044890add585b5cb456
+guid: 444088a4f2e5da040b50e96f4d88c854
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Talking
+      name: TalkingB
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 309
+      lastFrame: 311
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

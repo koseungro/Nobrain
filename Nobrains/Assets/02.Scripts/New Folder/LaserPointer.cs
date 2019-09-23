@@ -4,6 +4,7 @@ using UnityEngine;
 using Valve.VR;
 using UnityEngine.EventSystems;
 
+
 public class LaserPointer : MonoBehaviour
 {
     private SteamVR_Behaviour_Pose pose;
@@ -20,6 +21,7 @@ public class LaserPointer : MonoBehaviour
     private RaycastHit hit;
     private Ray ray;
     private int brainLayer;
+    private int animLayer;
     private GameObject currBrain;
     private GameObject prevBrain;
     private bool uiClick = false;
@@ -39,6 +41,7 @@ public class LaserPointer : MonoBehaviour
         hand = pose.inputSource;
         tr = GetComponent<Transform>();
         brainLayer = 1 << LayerMask.NameToLayer("BRAIN");
+        animLayer = 1 << LayerMask.NameToLayer("BRAIN_ANIM");
 
         GameObject _pointer = Resources.Load<GameObject>("Pointer");
         pointer = Instantiate(_pointer);
@@ -50,11 +53,16 @@ public class LaserPointer : MonoBehaviour
     void Update()
     {
         Pointer();
-        BrainPart();        
+        BrainPart();
+        ClickButton();
 
-        if (trigger.GetStateDown(hand))
+        if (trigger.GetStateDown(hand) && Physics.Raycast(ray, out hit, range, brainLayer))
         {
             ClickUI();
+        }
+        else if (trigger.GetStateDown(hand) && Physics.Raycast(ray, out hit, range, animLayer))
+        {
+            ClickAnim();
         }
 
     }
@@ -104,7 +112,7 @@ public class LaserPointer : MonoBehaviour
     }
     void BrainPart()
     {
-        if (Physics.Raycast(ray, out hit, range, brainLayer))
+        if (Physics.Raycast(ray, out hit, range, brainLayer | animLayer))
         {
             currBrain = hit.collider.gameObject;
             if (currBrain != prevBrain) //현재 선택한 뇌의 부분과 이전에 선택했던 뇌의 부분이 다른 경우
@@ -129,17 +137,32 @@ public class LaserPointer : MonoBehaviour
     }
     void ClickUI()
     {
-        if (!uiClick && Physics.Raycast(ray, out hit, range, brainLayer))
+        if (!uiClick /*&& Physics.Raycast(ray, out hit, range, brainLayer)*/) //뇌 부분 별 설명UI 켜기
         {
             hit.collider.gameObject.transform.Find("Canvas").gameObject.SetActive(true);
             uiClick = true;
         }
-        else if(uiClick && Physics.Raycast(ray, out hit, range, brainLayer))
+        else if (uiClick /*&& Physics.Raycast(ray, out hit, range, brainLayer)*/) //뇌 부분 별 설명UI 끄기
         {
             hit.collider.gameObject.transform.Find("Canvas").gameObject.SetActive(false);
             uiClick = false;
         }
-        if (Physics.Raycast(ray, out hit, range, 1 << 5))
+        // if (Physics.Raycast(ray, out hit, range, 1 << 5)) //Scene 이동 버튼 클릭
+        // {
+        //     Debug.Log("Button!");
+        //     if (trigger.GetStateDown(hand))
+        //     {
+        //         ExecuteEvents.Execute(hit.collider.gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
+        //     }
+        // }
+    }
+    void ClickAnim()
+    {
+        Debug.Log("HIHIHI");
+    }
+
+    void ClickButton() {
+        if (Physics.Raycast(ray, out hit, range, 1 << 5)) //Scene 이동 버튼 클릭
         {
             Debug.Log("Button!");
             if (trigger.GetStateDown(hand))
@@ -148,5 +171,5 @@ public class LaserPointer : MonoBehaviour
             }
         }
     }
-    
+
 }
