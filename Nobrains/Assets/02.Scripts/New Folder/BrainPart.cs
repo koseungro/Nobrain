@@ -13,13 +13,13 @@ public class BrainPart : MonoBehaviour
     private void OnEnable()
     {       
         LaserPointer.OnLaserEnter += LaserEnter;
-        LaserPointer.OnLaserClick += LaserClick;
+        // LaserPointer.OnLaserClick += LaserClick;
         LaserPointer.OnLaserExit += LaserExit;
     }
     private void OnDisable()
     {
         LaserPointer.OnLaserEnter -= LaserEnter;
-        LaserPointer.OnLaserClick -= LaserClick;
+        // LaserPointer.OnLaserClick -= LaserClick;
         LaserPointer.OnLaserExit -= LaserExit;
 
     }
@@ -42,12 +42,11 @@ public class BrainPart : MonoBehaviour
             rend.material.color = highlightColor;
         }
     }
-    void LaserClick()
-    {
-        ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
+    // void LaserClick()
+    // {
+    //     ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
               
-
-    }
+    // }
     void LaserExit(GameObject pBrain)
     {
         if (gameObject == pBrain)
