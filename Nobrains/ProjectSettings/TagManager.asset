@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Interactable
   - Bomb
+  - frontal
+  - parietal
+  - temporal
+  - occipital
+  - Broca
+  - Wernicke
+  - diencephaion
+  - stem
+  - cerebellum
   layers:
   - Default
   - TransparentFX

@@ -363,8 +363,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5531268062813574962}
-  - component: {fileID: 5531268062813574963}
   - component: {fileID: 5531268062813574960}
+  - component: {fileID: 984269964}
   m_Layer: 0
   m_Name: PlatformStand
   m_TagString: Untagged
@@ -389,21 +389,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &5531268062813574963
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5531268062813574961}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 79c674091b3c8ec4b8ef703532ac2dce, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &5531268062813574960
 Animator:
   serializedVersion: 3
@@ -423,6 +408,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &984269964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5531268062813574961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5590e1b45202f9d4899a02cc2e637f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gob: {fileID: 0}
+  Leeb: {fileID: 0}
 --- !u!1 &5531268062859096140
 GameObject:
   m_ObjectHideFlags: 0

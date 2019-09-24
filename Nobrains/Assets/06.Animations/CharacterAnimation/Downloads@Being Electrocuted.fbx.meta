@@ -38,7 +38,7 @@ ModelImporter:
       name: Being Electrocuted
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
+      firstFrame: 40
       lastFrame: 242
       wrapMode: 0
       orientationOffsetY: 0
