@@ -7,19 +7,19 @@ using UnityEngine.EventSystems;
 public class BrainPart : MonoBehaviour
 {        
     private Renderer rend;
-    private Color normalColor;
+    private Color normalColor;    
     public Color highlightColor = new Color(0.764151f, 0.1534704f, 0.1477839f, 0.5529412f);
 
     private void OnEnable()
-    {
+    {       
         LaserPointer.OnLaserEnter += LaserEnter;
-        // LaserPointer.OnLaserClick += LaserClick;
+        LaserPointer.OnLaserClick += LaserClick;
         LaserPointer.OnLaserExit += LaserExit;
     }
     private void OnDisable()
     {
         LaserPointer.OnLaserEnter -= LaserEnter;
-        // LaserPointer.OnLaserClick -= LaserClick;
+        LaserPointer.OnLaserClick -= LaserClick;
         LaserPointer.OnLaserExit -= LaserExit;
 
     }
@@ -27,14 +27,14 @@ public class BrainPart : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         normalColor = GetComponent<Renderer>().material.color;
+       
         // mat = Resources.Load<GameObject>("TestColor");
 
     }
     void update() {
 
-    }
-    // Start is called before the first frame update
-    void LaserEnter(GameObject cBrain) //cBrain 씨브레인 ㅆㅂ
+    }    
+    void LaserEnter(GameObject cBrain) 
     {
         if (gameObject == cBrain)
         {
@@ -42,11 +42,12 @@ public class BrainPart : MonoBehaviour
             rend.material.color = highlightColor;
         }
     }
-    // void LaserClick()
-    // {
-    //     ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
-    //     Debug.Log("YAYAYAYAYA");        
-    // }
+    void LaserClick()
+    {
+        ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerClickHandler);
+              
+
+    }
     void LaserExit(GameObject pBrain)
     {
         if (gameObject == pBrain)

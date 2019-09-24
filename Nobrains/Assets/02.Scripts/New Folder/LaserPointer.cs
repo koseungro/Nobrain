@@ -29,8 +29,8 @@ public class LaserPointer : MonoBehaviour
     public delegate void LaserEnterHandler(GameObject cBrain);
     public static event LaserEnterHandler OnLaserEnter;
 
-    // public delegate void LaserClickHandler();
-    // public static event LaserClickHandler OnLaserClick;
+    public delegate void LaserClickHandler();
+    public static event LaserClickHandler OnLaserClick;    
 
     public delegate void LaserExitHandler(GameObject pBrain);
     public static event LaserExitHandler OnLaserExit;
@@ -158,7 +158,7 @@ public class LaserPointer : MonoBehaviour
     }
     void ClickAnim()
     {
-        Debug.Log("HIHIHI");
+        OnLaserClick(); //Animation Scene에서 뇌 부분을 클릭했을 때 OnlaserClick 이벤트 발생
     }
 
     void ClickButton() {
