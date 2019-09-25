@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 3069061998471538031}
   m_Layer: 5
   m_Name: ParietalPanel
-  m_TagString: Untagged
+  m_TagString: parietal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 3069061998524443324}
   m_Layer: 5
   m_Name: BrocaPanel
-  m_TagString: Untagged
+  m_TagString: Broca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3069061998618795284}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3069061998640410452}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 3069061998644971073}
   m_Layer: 5
   m_Name: WernickePanel
-  m_TagString: Untagged
+  m_TagString: Wernicke
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1208,14 +1208,14 @@ MonoBehaviour:
   m_margin: {x: 0.1, y: 0.1, z: 0.1, w: 0.7753236}
   m_textInfo:
     textComponent: {fileID: 3069061998678524865}
-    characterCount: 13
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 2
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 2
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -1934,7 +1934,7 @@ GameObject:
   - component: {fileID: 3069061998949841249}
   m_Layer: 5
   m_Name: CerebellumPanel
-  m_TagString: Untagged
+  m_TagString: cerebellum
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3069061999091642784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -2765,7 +2765,7 @@ GameObject:
   - component: {fileID: 3069061999176796274}
   m_Layer: 5
   m_Name: OccipitalPanel
-  m_TagString: Untagged
+  m_TagString: occipital
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3588,14 +3588,14 @@ MonoBehaviour:
   m_margin: {x: 0.1, y: 0.282703, z: 0.1, w: 0.6387389}
   m_textInfo:
     textComponent: {fileID: 3069061999272969589}
-    characterCount: 21
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 6
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 2
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3772,7 +3772,7 @@ GameObject:
   - component: {fileID: 3069061999378378516}
   m_Layer: 5
   m_Name: DiencephalonPanel
-  m_TagString: Untagged
+  m_TagString: diencephaion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3850,11 +3850,11 @@ GameObject:
   - component: {fileID: 3069061999437914952}
   m_Layer: 5
   m_Name: BrainstemPanel
-  m_TagString: Untagged
+  m_TagString: stem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3069061999437914955
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4002,7 +4002,7 @@ GameObject:
   - component: {fileID: 3069061999467943691}
   m_Layer: 5
   m_Name: TemporalPanel
-  m_TagString: Untagged
+  m_TagString: temporal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5290,14 +5290,14 @@ MonoBehaviour:
   m_margin: {x: 0.1, y: 0.061937243, z: 0.1, w: 0.45439756}
   m_textInfo:
     textComponent: {fileID: 3069062000013407788}
-    characterCount: 77
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 16
-    wordCount: 17
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 4
-    pageCount: 1
-    materialCount: 2
+    lineCount: 0
+    pageCount: 0
+    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -6079,7 +6079,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3069062000270747844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -7616,6 +7616,7 @@ GameObject:
   - component: {fileID: 7502142208308500732}
   - component: {fileID: 7502142208308500733}
   - component: {fileID: 7502142208308500610}
+  - component: {fileID: 1490501269}
   m_Layer: 5
   m_Name: InfoUI
   m_TagString: Untagged
@@ -7711,6 +7712,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1490501269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502142208308500611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08aee829c228b4c409a3b7ee80006a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7502142208716019919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7724,7 +7737,7 @@ GameObject:
   - component: {fileID: 7502142208716019913}
   m_Layer: 5
   m_Name: FrontalPanel
-  m_TagString: Untagged
+  m_TagString: frontal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

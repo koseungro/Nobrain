@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01.Scenes/Seungro.unity
+    path: Assets/01.Scenes/Scene1.unity
     guid: 799538ebe8a611548804b20c1d7369ce
   - enabled: 1
-    path: Assets/01.Scenes/AnimationScene.unity
+    path: Assets/01.Scenes/Scene2.unity
     guid: 686cabe341602f349a36447edc8db337
   - enabled: 1
-    path: Assets/01.Scenes/JH.unity
+    path: Assets/01.Scenes/Scene3.unity
     guid: 941f72bb1f83dd74fbbcaedb8d344843
   m_configObjects: {}

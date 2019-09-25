@@ -36,7 +36,7 @@ public class HandJH : MonoBehaviour
             Debug.Log("내려놔라");
 
             brain.transform.SetParent(null);
-            brain.GetComponent<GoBrain>().enabled = true;
+            // brain.GetComponent<GoBrain>().enabled = true;
             Debug.Log("내려놓음" + brain.name);
 
             objectPicked = false;

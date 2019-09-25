@@ -10,6 +10,10 @@ public class PlatformController : MonoBehaviour
     private GameObject selectedBrain;
     public GameObject Gob;
     public GameObject Leeb;
+    public GameObject UI;
+
+    public AudioClip damagedsfx;
+    private AudioSource audioSource;
 
     private void OnEnable()
     {
@@ -27,6 +31,7 @@ public class PlatformController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        audioSource = this.gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,11 +39,13 @@ public class PlatformController : MonoBehaviour
     {
         Gob.SendMessage("PlayAnim", SendMessageOptions.DontRequireReceiver);
         Leeb.SendMessage("PlayAnim", SendMessageOptions.DontRequireReceiver);
+        UI.SendMessage("PlayUI", SendMessageOptions.DontRequireReceiver);
     }
 
     void LaserClick()
     {
         //애니메이션 실행
+        audioSource.PlayOneShot(damagedsfx);
         anim.SetTrigger("play_animation");
 
     }

@@ -10,6 +10,7 @@ public class BrainPart : MonoBehaviour
     private Color normalColor;    
     public Color highlightColor = new Color(0.764151f, 0.1534704f, 0.1477839f, 0.5529412f);
 
+
     private void OnEnable()
     {       
         LaserPointer.OnLaserEnter += LaserEnter;
@@ -27,6 +28,7 @@ public class BrainPart : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         normalColor = GetComponent<Renderer>().material.color;
+        
        
         // mat = Resources.Load<GameObject>("TestColor");
 
@@ -40,6 +42,7 @@ public class BrainPart : MonoBehaviour
         {
             ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.pointerEnterHandler);
             rend.material.color = highlightColor;
+            
         }
     }
     // void LaserClick()

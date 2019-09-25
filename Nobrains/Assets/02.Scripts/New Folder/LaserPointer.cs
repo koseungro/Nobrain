@@ -12,6 +12,9 @@ public class LaserPointer : MonoBehaviour
     private Transform tr;
     private LineRenderer line;
     private GameObject pointer;
+    
+    public AudioClip uiSound;
+    private AudioSource audioSource;
 
     private SteamVR_Action_Boolean trigger = SteamVR_Actions.default_InteractUI;
 
@@ -42,6 +45,7 @@ public class LaserPointer : MonoBehaviour
         tr = GetComponent<Transform>();
         brainLayer = 1 << LayerMask.NameToLayer("BRAIN");
         animLayer = 1 << LayerMask.NameToLayer("BRAIN_ANIM");
+        audioSource = this.gameObject.AddComponent<AudioSource>();
 
         GameObject _pointer = Resources.Load<GameObject>("Pointer");
         pointer = Instantiate(_pointer);
@@ -88,7 +92,7 @@ public class LaserPointer : MonoBehaviour
         if (Physics.Raycast(ray, out hit, range))
         {
             line.SetPosition(1, new Vector3(0, 0, hit.distance)); //라인이 오브젝트에 닿으면 그 hit을 끝점으로
-            if (hit.collider.gameObject.layer == 8 || hit.collider.gameObject.layer == 5) //만약 라인이 뇌에 닿으면 포인터 생성
+            if (hit.collider.gameObject.layer == 8 || hit.collider.gameObject.layer == 5 || hit.collider.gameObject.layer == 10) //만약 라인이 뇌에 닿으면 포인터 생성
             {
                 pointer.transform.gameObject.SetActive(true);
                 pointer.transform.position = hit.point;
@@ -140,11 +144,13 @@ public class LaserPointer : MonoBehaviour
         if (!uiClick /*&& Physics.Raycast(ray, out hit, range, brainLayer)*/) //뇌 부분 별 설명UI 켜기
         {
             hit.collider.gameObject.transform.Find("Canvas").gameObject.SetActive(true);
+            audioSource.PlayOneShot(uiSound);
             uiClick = true;
         }
         else if (uiClick /*&& Physics.Raycast(ray, out hit, range, brainLayer)*/) //뇌 부분 별 설명UI 끄기
         {
             hit.collider.gameObject.transform.Find("Canvas").gameObject.SetActive(false);
+            audioSource.PlayOneShot(uiSound);
             uiClick = false;
         }
         // if (Physics.Raycast(ray, out hit, range, 1 << 5)) //Scene 이동 버튼 클릭

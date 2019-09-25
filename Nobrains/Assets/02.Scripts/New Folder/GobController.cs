@@ -33,7 +33,7 @@ public class GobController : MonoBehaviour
         //애니메이션 실행
         switch (selectedBrain.tag)
         {
-            case "frontal":
+            case "frontal":                
                 anim.SetTrigger("hash_frontal");
                 break;
             case "parietal":
